@@ -1,0 +1,185 @@
+/* Main Header */
+.main-header .navbar {
+  background-color: #f4f4f4; /* Light gray background */
+}
+.main-header .navbar .nav > li > a,
+.main-header .navbar .nav > li > .navbar-text {
+  color: #666; /* Dark gray text */
+  max-height: 50px;
+}
+.main-header .navbar .nav > li > a:hover,
+.main-header .navbar .nav > li > a:active,
+.main-header .navbar .nav > li > a:focus,
+.main-header .navbar .nav .open > a,
+.main-header .navbar .nav .open > a:hover,
+.main-header .navbar .nav .open > a:focus {
+  background: linear-gradient(90deg, #ddd, #f4f4f4); /* Gradient on hover/active */
+  color: #444; /* Dark gray text on hover/active */
+}
+.main-header .navbar .sidebar-toggle {
+  color: #555; /* Slightly darker gray color */
+}
+.main-header .navbar .sidebar-toggle:hover {
+  color: #333; /* Dark gray color on hover */
+  background: linear-gradient(90deg, #ccc, #f4f4f4); /* Gradient on hover */
+}
+
+/* Logo */
+.main-header .logo {
+  background-color: #333; /* Dark gray background */
+  color: #fff; /* White text */
+  border-bottom: 0 solid transparent;
+}
+.main-header .logo:hover {
+  background: linear-gradient(90deg, #555, #333); /* Gradient on hover */
+}
+
+/* User Header */
+.main-header li.user-header {
+  background: linear-gradient(90deg, #3c8dbc, #f4f4f4); /* Gradient for user header */
+}
+
+/* Content Header */
+.content-header {
+  background-color: transparent;
+}
+
+/* User Menu */
+.navbar-nav > .user-menu > .dropdown-menu > .user-body {
+  background: linear-gradient(90deg, #e4e8f0, #f4f4f4); /* Gradient for user menu */
+}
+.navbar-nav > .user-menu > .dropdown-menu > .user-footer a:hover {
+  color: #444 !important; /* Dark gray text on hover */
+}
+
+/* Sidebar */
+.wrapper,
+.main-sidebar,
+.left-side {
+  background: linear-gradient(90deg, #444, #333); /* Gradient for sidebar */
+}
+.user-panel > .info,
+.user-panel > .info > a {
+  color: #fff; /* White text */
+}
+.sidebar-menu > li.header {
+  color: #808a90;
+  background-color: #1a2226; /* Retain the original color for contrast */
+}
+.sidebar-menu > li > a {
+  border-left: 3px solid transparent;
+}
+.sidebar-menu > li:hover > a,
+.sidebar-menu > li > a:focus,
+.sidebar-menu > li.active > a {
+  color: #fff; /* White text */
+  background: linear-gradient(90deg, #1e282c, #444); /* Gradient on hover/active */
+  border-left-color: #3c8dbc; /* Retain the original color for contrast */
+}
+.sidebar-menu > li > .treeview-menu {
+  margin: 0 1px;
+  background: linear-gradient(90deg, #2c3b41, #444); /* Gradient for treeview menu */
+}
+.sidebar a {
+  color: #b8c7ce;
+}
+.sidebar a:hover {
+  text-decoration: none;
+}
+
+
+
+/* Donate Sidebar Button */
+.sidebar-menu > li.menu-donate:hover > a,
+.sidebar-menu > li.menu-donate > a:focus {
+  background: linear-gradient(90deg, #367fa9, #444); /* Gradient on hover/focus */
+  border-left-color: #fff; /* White border on hover/focus */
+}
+
+/* Treeview Menu */
+.treeview-menu > li > a {
+  color: #8aa4af;
+}
+.treeview-menu > li.active > a,
+.treeview-menu > li > a:hover,
+.treeview-menu > li > a:focus {
+  color: #fff; /* White text */
+}
+
+/* Sidebar Form */
+.sidebar-form {
+  border-radius: 3px;
+  border: 1px solid #374850; /* Slightly darker gray border */
+  margin: 10px;
+}
+.sidebar-form input[type="text"],
+.sidebar-form .btn {
+  box-shadow: none;
+  background: linear-gradient(90deg, #374850, #444); /* Gradient for form elements */
+  border: 1px solid transparent;
+  height: 35px;
+  transition: all 0.3s ease-in-out;
+}
+.sidebar-form input[type="text"] {
+  color: #666; /* Dark gray text */
+  border-top-left-radius: 2px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 2px;
+}
+sidebar-form input[type="text"]:focus,
+.sidebar-form input[type="text"]:focus + .input-group-btn .btn {
+  background: linear-gradient(90deg, #fff, #f4f4f4); /* Gradient on focus */
+  color: #666; /* Dark gray text on focus */
+}
+.sidebar-form input[type="text"]:focus + .input-group-btn .btn {
+  border-left-color: #fff; /* White border on focus */
+}
+.sidebar-form .btn {
+  color: #999; /* Light gray text */
+  border-top-left-radius: 0;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 0;
+}
+
+/* Nav Tabs Custom */
+.nav-tabs-custom > .nav-tabs {
+  background: linear-gradient(90deg, #e4e8f0, #f4f4f4); /* Gradient for tab background */
+}
+.nav-tabs-custom > .nav-tabs > li {
+  margin-right: 1px;
+}
+.nav-tabs-custom > .nav-tabs > li:not(.active):hover {
+  background: linear-gradient(90deg, #fff, #f4f4f4); /* Gradient on hover */
+  border-top-color: #d2d6de; /* Slightly darker gray border on hover */
+}
+.nav-tabs-custom > .nav-tabs > li > a,
+.nav-tabs-custom > .nav-tabs > li > a:hover {
+  color: #567;
+}
+.nav-tabs-custom > .nav-tabs > li > a:focus {
+  color: #3c8dbc;
+}
+
+.queries-permitted {
+  background-color: #00a65a; /* Green background for "queries-permitted" */
+}
+
+.queries-blocked {
+  background-color: #999; /* Gray background for "queries-blocked" */
+}
+
+/* Status */
+.status-active {
+  color: #00a65a; /* Green text for "Active" */
+}
+
+.status-load {
+  color: #00a65a; /* Green text for "Load" */
+}
+
+.status-memory {
+  color: #00a65a; /* Green text for "Memory usage" */
+}
+
