@@ -1,0 +1,1 @@
+0 12 * * * python3 /var/www/html/admin/scripts/pi-hole/php/CORREO/send_email.py
