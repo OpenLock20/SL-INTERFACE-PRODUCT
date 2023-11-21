@@ -41,8 +41,8 @@ def enviar_correo(consultas, porcentaje_bloqueo, consultas_bloqueadas, dominios_
     # Configuración del servidor de correo
     servidor_correo = "smtp.office365.com"
     puerto_correo = 587
-    usuario_correo = ""
-    contraseña_correo = ""
+    usuario_correo = "SafeLock_UDA@outlook.com"
+    contraseña_correo = "SL23__iNUf0e34-U_"
 
     archivo_correo = "correo_almacenado.txt"
 
@@ -51,7 +51,7 @@ def enviar_correo(consultas, porcentaje_bloqueo, consultas_bloqueadas, dominios_
 
 
     # Configuración del destinatario y remitente
-    remitente = ""
+    remitente = "SafeLock_UDA@outlook.com"
     destinatario = correo_usuario
 
     # Configuración del mensaje HTML
