@@ -66,31 +66,12 @@ require 'scripts/pi-hole/php/header.php';
                             <button type="submit" class="btn btn-primary">
                                 <i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;&nbsp;Log in
                             </button>
+                            <!-- New button -->
+                            <a href="estadisticas.php" class="btn btn-success">
+                                <i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;&nbsp;Ingresar sin contraseña
+                            </a>
                         </div>
                     </form>
-                    <br>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="box box-<?php if (!$wrongpassword) { ?>info collapsed-box<?php } else { ?>danger<?php }?>">
-                                <div class="box-header with-border pointer no-user-select" data-widget="collapse">
-                                    <h3 class="box-title">Forgot password?</h3>
-                                    <div class="box-tools pull-right">
-                                        <button type="button" class="btn btn-box-tool">
-                                            <i class="fa <?php if ($wrongpassword) { ?>fa-minus<?php } else { ?>fa-plus<?php } ?>"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="box-body">
-                                    <p>After installing Pi-hole for the first time, a password is generated and displayed
-                                        to the user. The password cannot be retrieved later on, but it is possible to set
-                                        a new password (or explicitly disable the password by setting an empty password)
-                                        using the command
-                                    </p>
-                                    <pre>sudo pihole -a -p</pre>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <!-- /.login-card-body -->
             </div>
@@ -100,4 +81,3 @@ require 'scripts/pi-hole/php/header.php';
     <script src="<?php echo fileversion('scripts/pi-hole/js/footer.js'); ?>"></script>
 </body>
 </html>
-

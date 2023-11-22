@@ -552,7 +552,7 @@ td.details-control {
   position: relative;
   margin: 0 auto;
   padding: 5px;
-  width: 22%;
+  width: 480px;
   max-width: 100%;
   flex: 0 1 auto;
   align-self: center;
@@ -564,13 +564,13 @@ td.details-control {
 }
 
 .loginpage-logo {
-  width: 80%;
+  width: 300px;
   margin: 0 0 10px;
 }
 
 .login-options {
   display: flex;
-  margin: 0 0 50px 15x;
+  margin: 0 0 15px -15px;
   flex-wrap: wrap;
 }
 
@@ -580,7 +580,7 @@ td.details-control {
 }
 
 .login-options div:last-child {
-  margin-right: 50px;
+  margin-right: 2px;
   margin-bottom: 0 !important;
   flex: 0 1 auto;
   font-size: 95%;
@@ -590,21 +590,6 @@ td.details-control {
   flex: 1 0 auto;
 }
 
-.login-footer a {
-  text-align: center;
-  min-width: 28%;
-}
-@media screen and (max-width: 420px) {
-  .login-footer a {
-    min-width: auto;
-    padding: 5px;
-  }
-  
-.form-group.btn.btn-primary{
-    padding: 500px 20px;
-
-
-}
 
 
 

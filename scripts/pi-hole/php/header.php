@@ -20,7 +20,7 @@ $hostname = gethostname() ? gethostname() : '';
     <meta http-equiv="cache-control" content="max-age=60,private">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>SafeLock<?php echo $hostname ? ' - '.$hostname : ''; ?></title>
+    <title>SafeLock by OpenLock</title>
 
     <link rel="apple-touch-icon" href="img/Logos_OpenLock/OpenLock_logo_No_Background.jpeg" sizes="180x180">
     <link rel="icon" href="" sizes="32x32" type="image/png">
