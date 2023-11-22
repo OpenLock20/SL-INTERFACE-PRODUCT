@@ -222,8 +222,8 @@ if ($auth) {
             // Cargar el correo al cargar la página
             cargarCorreo();
 
-            // Actualizar el correo cada 10 segundos (puedes ajustar este valor)
-            setInterval(cargarCorreo, 2000);
+            // Actualizar el correo cada segundo 
+            setInterval(cargarCorreo, 1000);
         });
     </script>
 

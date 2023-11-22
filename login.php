@@ -67,7 +67,7 @@ require 'scripts/pi-hole/php/header.php';
                                 <i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;&nbsp;Log in
                             </button>
                             <!-- New button -->
-                            <a href="estadisticas.php" class="btn btn-success">
+                            <a href="estadisticas/estadisticas.php" class="btn btn-success">
                                 <i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;&nbsp;Ingresar sin contraseña
                             </a>
                         </div>
