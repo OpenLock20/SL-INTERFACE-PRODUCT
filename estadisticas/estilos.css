@@ -1,33 +1,159 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+
+
+.logo-img {
+    max-width: 40%; /* Ajuste del tamaño máximo */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Añade estilos para centrar y ajustar el tamaño */
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/* Estilo para el título */
+h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+
+/* Resetear márgenes y rellenos */
+body, h1, h2, h3, p {
     margin: 0;
     padding: 0;
 }
 
-.contenedor-estadisticas {
-    max-width: 600px;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    text-align: center;
+/* Estilo para el cuerpo de la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     color: #333;
 }
 
-.estadistica {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
+/* Estilo para el contenedor principal de estadísticas */
+.contenedor-estadisticas {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.nombre-archivo {
+/* Estilo para los títulos */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Estilo para las cajas de estadísticas */
+.col-lg-3 {
+    width: 50%;
+    padding: 0 15px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.small-box {
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+/* Estilos específicos para cada caja de estadísticas */
+.bg-aqua {
+    background-color: #00c0ef;
+}
+
+.bg-red {
+    background-color: #d9534f;
+}
+
+.bg-yellow {
+    background-color: #f39c12;
+}
+
+.bg-green {
+    background-color: #5cb85c;
+}
+
+/* Estilo para el contenido interno de las cajas */
+.inner {
+    padding: 10px;
+}
+
+/* Estilo para los párrafos dentro de las cajas */
+p {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+/* Estilo para los números dentro de las cajas */
+.estadistica {
+    font-size: 24px;
     font-weight: bold;
-    color: #007bff;
+    color: #fff;
+}
+
+/* Estilo para los iconos dentro de las cajas */
+.icon {
+    font-size: 48px;
+    padding: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+/* Estilo para el contenedor de los botones */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Estilo para el espacio entre los botones */
+.button-separator {
+    width: 10px; /* Ajusta el tamaño de la separación según sea necesario */
+}
+
+/* Estilo para el botón */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo para el botón verde */
+.btn-green {
+    background-color: #5cb85c; /* Color verde */
+    color: #fff; /* Texto blanco */
+}
+
+/* Estilo para el botón azul */
+.btn-blue {
+    background-color: #337ab7; /* Color azul */
+    color: #fff; /* Texto blanco */
+}
+
+/* Cambia el color de fondo cuando se pasa el ratón sobre el botón */
+.btn:hover {
+    background-color: #4cae4c; /* Color verde más oscuro al pasar el ratón */
+}
+
+/* Cambia el color de fondo cuando se pasa el ratón sobre el botón azul */
+.btn-blue:hover {
+    background-color: #286090; /* Color azul más oscuro al pasar el ratón */
 }
 

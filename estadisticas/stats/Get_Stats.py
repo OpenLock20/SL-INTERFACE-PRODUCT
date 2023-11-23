@@ -44,7 +44,7 @@ def leer_archivos():
             file.write(str(consultas_totales))
 
         with open("/var/www/html/admin/estadisticas/stats/porcentaje_bloqueo.txt", "w") as file:
-            file.write(str(porcentaje_bloqueo))
+            file.write(str(porcentaje_bloqueo) + "%")
 
         with open("/var/www/html/admin/estadisticas/stats/consultas_bloqueadas.txt", "w") as file:
             file.write(str(consultas_bloqueadas))
