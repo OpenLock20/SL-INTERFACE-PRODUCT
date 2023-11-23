@@ -39,10 +39,10 @@ def obtener_estadisticas():
 
 def enviar_correo(consultas, porcentaje_bloqueo, consultas_bloqueadas, dominios_en_listas):
     # Configuración del servidor de correo
-    servidor_correo = "smtp.office365.com"
+    servidor_correo = "mail.openlocksecurity.com"
     puerto_correo = 587
-    usuario_correo = "SafeLock_UDA@outlook.com"
-    contraseña_correo = "SL23__iNUf0e34-U_"
+    usuario_correo = "safelock_UDA@openlocksecurity.com"
+    contraseña_correo = "9!1YC@#8bcWD"
 
     archivo_correo = "correo_almacenado.txt"
 
@@ -51,7 +51,7 @@ def enviar_correo(consultas, porcentaje_bloqueo, consultas_bloqueadas, dominios_
 
 
     # Configuración del destinatario y remitente
-    remitente = "SafeLock_UDA@outlook.com"
+    remitente = "safelock_UDA@openlocksecurity.com"
     destinatario = correo_usuario
 
     # Configuración del mensaje HTML
