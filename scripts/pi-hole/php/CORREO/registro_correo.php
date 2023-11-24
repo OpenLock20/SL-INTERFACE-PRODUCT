@@ -76,9 +76,9 @@
 
         <label for="frecuencia">Frecuencia de informes:</label>
         <select id="frecuencia" name="frecuencia">
-            <option value="0 12 * * * python3 /var/www/html/admin/scripts/pi-hole/php/CORREO/send_email.py" <?php echo (obtenerFrecuenciaActual() == 'diario') ? 'selected' : ''; ?>>Recibir Informe Diario</option>
-            <option value="0 12 * * 5 python3 /var/www/html/admin/scripts/pi-hole/php/CORREO/send_email.py" <?php echo (obtenerFrecuenciaActual() == 'semanal') ? 'selected' : ''; ?>>Recibir Informe Semanal</option>
-            <option value="0 12 28 * * python3 /var/www/html/admin/scripts/pi-hole/php/CORREO/send_email.py" <?php echo (obtenerFrecuenciaActual() == 'mensual') ? 'selected' : ''; ?>>Recibir Informe Mensual</option>
+            <option value="0 12 * * * root python3 /var/www/html/admin/scripts/pi-hole/php/CORREO/send_email.py" <?php echo (obtenerFrecuenciaActual() == 'diario') ? 'selected' : ''; ?>>Recibir Informe Diario</option>
+            <option value="0 12 * * 5 root python3 /var/www/html/admin/scripts/pi-hole/php/CORREO/send_email.py" <?php echo (obtenerFrecuenciaActual() == 'semanal') ? 'selected' : ''; ?>>Recibir Informe Semanal</option>
+            <option value="0 12 28 * * root python3 /var/www/html/admin/scripts/pi-hole/php/CORREO/send_email.py" <?php echo (obtenerFrecuenciaActual() == 'mensual') ? 'selected' : ''; ?>>Recibir Informe Mensual</option>
         </select>
 
         <input type="submit" value="Aceptar">
