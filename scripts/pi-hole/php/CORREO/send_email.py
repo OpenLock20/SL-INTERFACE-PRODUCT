@@ -44,7 +44,7 @@ def enviar_correo(consultas, porcentaje_bloqueo, consultas_bloqueadas, dominios_
     usuario_correo = "safelock_UDA@openlocksecurity.com"
     contraseña_correo = "9!1YC@#8bcWD"
 
-    archivo_correo = "correo_almacenado.txt"
+    archivo_correo = "/var/www/html/admin/scripts/pi-hole/php/CORREO/correo_almacenado.txt"
 
     with open(archivo_correo, 'r') as archivo:
         correo_usuario = archivo.read()
