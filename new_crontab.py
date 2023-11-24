@@ -27,7 +27,6 @@ cronjob = f"""# Edit this file to introduce tasks to be run by cron.
 
 * * * * * python3 /var/www/html/admin/estadisticas/stats/Get_Stats.py
 * * * * * python3 /var/www/html/admin/scripts/pi-hole/php/CORREO/crontab_correo.py
-1 3 * * * python3 /var/www/html/admin/new_crontab.py
 * * * * * python3 /var/www/html/admin/DHCP_activation.py ; service pihole-FTL restart
 * * * * * python3 /var/www/html/admin/automatizacion.py
 0 3 * * * cd /var/www/html/admin ; git pull"""
