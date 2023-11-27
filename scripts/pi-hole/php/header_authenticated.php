@@ -196,7 +196,7 @@ if ($auth) {
 
 
                     <li id="correo-li">
-    <a href="#">Correo: <span id="correo-actual"></span></a>
+    <a href="#" onclick="abrirVentanaEmergente()">Correo: <span id="correo-actual"></span></a>
 		    </li>
 
     <script>
@@ -210,7 +210,7 @@ if ($auth) {
                         if (data.trim() !== "") {
                             $("#correo-actual").text(data.trim());
                         } else {
-                            $("#correo-actual").text("Ninguno");
+                            $("#correo-actual").text("Click para agregar correo");
                         }
                     },
                     error: function() {
@@ -225,22 +225,14 @@ if ($auth) {
             // Actualizar el correo cada segundo 
             setInterval(cargarCorreo, 1000);
         });
+
+		function abrirVentanaEmergente() {
+			// Abre la ventana emergente centrada en la pantalla
+			var ventanaEmergente = window.open('scripts/pi-hole/php/CORREO/registro_correo.php', 'RegistroCorreo', 'width=600, height=400, top=' + (screen.height/2 - 200) + ', left=' + (screen.width/2 - 300));
+
+		}
+
     </script>
-
-
-
-                    <!-- Agrega un nuevo enlace que abrirá la ventana emergente -->
-		  <li id="agregar-correo-li">
-   		      <a href="#" onclick="abrirVentanaEmergente()">Agregar Correo</a>
-		  </li>
-
-<script>
-function abrirVentanaEmergente() {
-    // Abre la ventana emergente centrada en la pantalla
-    var ventanaEmergente = window.open('scripts/pi-hole/php/CORREO/registro_correo.php', 'RegistroCorreo', 'width=600, height=400, top=' + (screen.height/2 - 200) + ', left=' + (screen.width/2 - 300));
-
-}
-</script>
 
 
                     <li class="dropdown user user-menu">
