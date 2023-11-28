@@ -67,7 +67,7 @@ def enviar_correo(consultas, porcentaje_bloqueo, consultas_bloqueadas, dominios_
         f"</head>"
         f"<body>"
         f"<div class='container-box'>"
-        f"<h2 style='color: #333;'>Estadísticas Pi-hole</h2>"
+        f"<h2 style='color: #333;'>Estadísticas SafeLock</h2>"
         f"<div class='stat-box'>"
         f"<p><strong>Consultas totales:</strong> {consultas}</p>"
         f"</div>"
@@ -88,7 +88,7 @@ def enviar_correo(consultas, porcentaje_bloqueo, consultas_bloqueadas, dominios_
     mensaje = MIMEMultipart()
     mensaje['From'] = remitente
     mensaje['To'] = destinatario
-    mensaje['Subject'] = "Estadísticas desde Pi-hole"
+    mensaje['Subject'] = "Estadísticas SafeLock"
     mensaje.attach(MIMEText(cuerpo_mensaje, 'html'))
 
     # Iniciar sesión en el servidor de correo y enviar el mensaje
