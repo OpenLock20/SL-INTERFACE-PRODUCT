@@ -18,7 +18,7 @@ conf_pull = """# Se hace un pool automatico a las 3 a.m.con el archivo pull.sh
 conf_dhcp = """#Aqui se programa que se haga el pool del DHCP
 * * * * * root python3 /var/www/html/admin/DHCP_activation.py ; service pihole-FTL restart
 #aqui se hace el DHCP starvation
-* * * * * root python3 /var/www/html/admin/automatizacion.py
+* * * * * root python3 /var/www/html/admin/automatizacion.p
 """
 
 with open(update_email_crontab_file, 'r') as conf:
