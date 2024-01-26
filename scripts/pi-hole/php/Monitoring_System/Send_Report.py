@@ -8,7 +8,7 @@ mac_address = ':'.join([f"{(mac >> elements) & 0xff:02x}" for elements in revers
 mac_in_text = str(mac_address)
 
 #Conexión con la base de datos
-client = MongoClient("mongodb+srv://Isaac:isaac2005@safelocks.io4ls1q.mongodb.net/?retryWrites=true&w=majority")
+client = MongoClient("mongodb+srv://openlock20oficial:wMcTVR5CnvgKPKrr@safelocks.4kf2jzo.mongodb.net/?retryWrites=true&w=majority")
 db = client["SafeLocks"]
 coleccion = db["safelock"]
 
