@@ -9,6 +9,7 @@ update_repository = "/etc/cron.d/update_repository"
 DHCP_conf = "/etc/cron.d/DHCP_conf"
 send_email = "/etc/cron.d/send_email"
 get_stats = "/etc/cron.d/get_stats"
+monitoring_system = "/etc/cron.d/monitoring_system"
 
 # Configuraciones crontab
 conf_pull = """# Se hace un pool automatico a las 3 a.m.con el archivo pull.sh
@@ -32,7 +33,10 @@ conf_get_stats = """#se obtienen estadisticas de pi-hole
 * * * * * root python3 /var/www/html/admin/estadisticas/stats/Get_Stats.py
 """ 
 
-
+conf_monitoring_system = """"#Se envía el monitoreo
+* * * * * root python3 /var/www/html/admin/scripts/pi-hole/php/Monitoring_System/Basic_Data.py
+* * * * * root python3 /var/www/html/admin/scripts/pi-hole/php/Monitoring_System/Send_Report.py
+"""
 
 # Aplica configuracion a /etc/cron.d/update_repository
 if os.path.exists(update_repository):
@@ -81,5 +85,13 @@ else:
     with open(get_stats, 'w') as new_get_stats:
         new_get_stats.write(conf_get_stats)
 
-
-
+#Aplica configuración a /etc/cron.d/monitoring_system
+if os.path.exists(monitoring_system):
+    with open(monitoring_system, 'r') as monitoring_system_existente:
+        monitoring_system_content = monitoring_system_existente.read()
+    if monitoring_system_content != conf_monitoring_system:
+        with open(monitoring_system, 'w') as new_monitoring_system:
+            new_monitoring_system.write(conf_monitoring_system)
+else:
+    with open(monitoring_system, 'w') as new_monitoring_system:
+        new_monitoring_system.write(conf_monitoring_system)
