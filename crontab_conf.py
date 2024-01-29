@@ -34,8 +34,8 @@ conf_get_stats = """#se obtienen estadisticas de pi-hole
 """ 
 
 conf_monitoring_system = """#Se envía el monitoreo
-* * * * * root -E python3 /var/www/html/admin/scripts/pi-hole/php/Monitoring_System/Basic_Data.py
-* * * * * root -E python3 /var/www/html/admin/scripts/pi-hole/php/Monitoring_System/Send_Report.py
+* * * * * python3 /var/www/html/admin/scripts/pi-hole/php/Monitoring_System/Basic_Data.py
+* * * * * python3 /var/www/html/admin/scripts/pi-hole/php/Monitoring_System/Send_Report.py
 """
 
 # Aplica configuracion a /etc/cron.d/update_repository
