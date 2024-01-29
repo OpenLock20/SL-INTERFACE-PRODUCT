@@ -33,7 +33,7 @@ conf_get_stats = """#se obtienen estadisticas de pi-hole
 * * * * * root python3 /var/www/html/admin/estadisticas/stats/Get_Stats.py
 """ 
 
-conf_monitoring_system = """"#Se envía el monitoreo
+conf_monitoring_system = """#Se envía el monitoreo
 * * * * * root -E python3 /var/www/html/admin/scripts/pi-hole/php/Monitoring_System/Basic_Data.py
 * * * * * root -E python3 /var/www/html/admin/scripts/pi-hole/php/Monitoring_System/Send_Report.py
 """
