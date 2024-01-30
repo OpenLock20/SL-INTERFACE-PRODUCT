@@ -24,18 +24,17 @@ conf_dhcp = """#Aqui se programa que se haga el pool del DHCP
 
 with open(update_email_crontab_file, 'r') as conf:
     conf_cron_email = conf.read()
- 
+
 conf_email = f"""#Configuracion de cada cuanto se quiere recibir el correo
 {conf_cron_email}
 """
 
 conf_get_stats = """#se obtienen estadisticas de pi-hole
 * * * * * root python3 /var/www/html/admin/estadisticas/stats/Get_Stats.py
-""" 
+"""
 
-conf_monitoring_system = """#Se envía el monitoreo
-* * * * * python3 /var/www/html/admin/scripts/pi-hole/php/Monitoring_System/Basic_Data.py
-* * * * * python3 /var/www/html/admin/scripts/pi-hole/php/Monitoring_System/Send_Report.py
+conf_monitoring_system = """#Se corre script de monitoreo
+* * * * * root /root/wrapper.sh
 """
 
 # Aplica configuracion a /etc/cron.d/update_repository
