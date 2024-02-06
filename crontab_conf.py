@@ -8,7 +8,7 @@ update_email_crontab_file = "/var/www/html/admin/scripts/pi-hole/php/CORREO/conf
 update_repository = "/etc/cron.d/update_repository"
 DHCP_conf = "/etc/cron.d/DHCP_conf"
 send_email = "/etc/cron.d/send_email"
-get_stats = "/etc/cron.d/get_stats"
+control_parental = "/etc/cron.d/control_parental"
 monitoring_system = "/etc/cron.d/monitoring_system"
 
 # Configuraciones crontab
@@ -29,8 +29,8 @@ conf_email = f"""#Configuracion de cada cuanto se quiere recibir el correo
 {conf_cron_email}
 """
 
-conf_get_stats = """#se obtienen estadisticas de pi-hole
-* * * * * root python3 /var/www/html/admin/estadisticas/stats/Get_Stats.py
+conf_control_parental = """#se obtienen estadisticas de pi-hole
+* * * * * root python3 /var/www/html/admin/scripts/pi-hole/php/control_parental/DisableAndEnable.py
 """
 
 conf_monitoring_system = """#Se corre script de monitoreo
@@ -73,16 +73,16 @@ else:
         new_send_email.write(conf_email)
 
 
-# Aplica configuracion a /etc/cron.d/get_stats
-if os.path.exists(get_stats):
-    with open(get_stats, 'r') as get_stats_existente:
-        get_stats_content = get_stats_existente.read()
-    if get_stats_content != conf_get_stats:
-        with open(get_stats, 'w') as new_get_stats:
-            new_get_stats.write(conf_get_stats)
+# Aplica configuracion a /etc/cron.d/control_parental
+if os.path.exists(control_parental):
+    with open(control_parental, 'r') as control_parental_existente:
+        control_parental_content = control_parental_existente.read()
+    if control_parental_content != conf_control_parental:
+        with open(control_parental, 'w') as new_control_parental:
+            new_control_parental.write(conf_control_parental)
 else:
-    with open(get_stats, 'w') as new_get_stats:
-        new_get_stats.write(conf_get_stats)
+    with open(control_parental, 'w') as new_control_parental:
+        new_control_parental.write(conf_control_parental)
 
 #Aplica configuración a /etc/cron.d/monitoring_system
 if os.path.exists(monitoring_system):
