@@ -9,9 +9,10 @@
     max-width: 400px;
     margin: 20px auto;
     display: flex;
+    flex-direction: column; /* Organiza los elementos en columna */
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    padding: 20px; /* Ajustado para dar más espacio */
     background-color: #efefef;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -22,87 +23,33 @@
     font-weight: bold;
     color: #333;
     padding: 10px;
+    margin-bottom: 20px; /* Espacio entre el título y el botón */
 }
 
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 90px;
-    height: 44px;
-}
-
-.switch input[type=checkbox] {
-    position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-
-.switch .slider {
-    position: absolute;
+.btn-parental-control {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #5cb85c; /* Color verde */
+    color: #fff; /* Texto blanco */
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Abarca todo el contenedor */
 }
 
-.switch-label {
-    position: absolute;
-    color: #fff;
-    font-size: 20px; 
+.btn-parental-control:hover {
+    background-color: #4cae4c; /* Color más oscuro al pasar el mouse */
 }
 
-.switch .off {
-    right: 12px; 
-    top: 10px; 
-    display: none; 
+/* Añadido para el botón rojo */
+.btn-red {
+    background-color: #d9534f; /* Color rojo */
+    color: #fff; /* Texto blanco */
 }
 
-
-.switch .on {
-    left: 13px; /* ajustar según sea necesario */
-    top: 10px; /* ajustar según sea necesario */
-    display: none; /* oculta por defecto */
-}
-
-
-.switch .slider:before {
-    position: absolute;
-    content: "";
-    height: 36px;
-    width: 36px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: .4s;
-}
-
-.switch input:checked + .slider {
-    background-color: #49be25;
-}
-
-.switch input:checked + .slider:before {
-    transform: translateX(46px);
-}
-
-.switch input:checked ~ .on {
-    display: block; 
-}
-
-.switch input:not(:checked) ~ .off {
-    display: block; 
-}
-
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
+.btn-red:hover {
+    background-color: #c9302c; /* Color más oscuro para el hover del botón rojo */
 }
 
 .row {
@@ -151,20 +98,8 @@ body {
     cursor: pointer;
 }
 
-.bg-aqua {
-    background-color: #00c0ef;
-}
-
-.bg-red {
-    background-color: #d9534f;
-}
-
-.bg-yellow {
-    background-color: #f39c12;
-}
-
-.bg-green {
-    background-color: #5cb85c;
+.bg-aqua, .bg-red, .bg-yellow, .bg-green {
+    color: #fff; /* Asegura texto blanco para todas las variantes de .small-box */
 }
 
 .inner {
@@ -174,13 +109,11 @@ body {
 p {
     font-size: 14px;
     margin-bottom: 5px;
-    color: #fff;
 }
 
 .estadistica {
     font-size: 24px;
     font-weight: bold;
-    color: #fff;
 }
 
 .button-container {
@@ -190,7 +123,7 @@ p {
 }
 
 .button-separator {
-    width: 10px; /* Establece el ancho del separador entre botones si es necesario */
+    width: 10px; /* Ancho del separador entre botones */
 }
 
 .btn {
@@ -204,23 +137,22 @@ p {
     transition: background-color 0.3s ease;
 }
 
+.btn-green, .btn-blue {
+    color: #fff; /* Texto blanco para los botones */
+}
+
 .btn-green {
-    background-color: #5cb85c; /* Color verde para el botón */
-    color: #fff; /* Texto blanco para el botón */
+    background-color: #5cb85c; /* Color verde */
 }
 
 .btn-blue {
-    background-color: #337ab7; /* Color azul para el botón */
-    color: #fff; /* Texto blanco para el botón */
+    background-color: #337ab7; /* Color azul */
 }
 
 .btn:hover {
-    background-color: #4cae4c; /* Color más oscuro para el hover del botón verde */
+    background-color: #4cae4c; /* Hover para botón verde */
 }
 
 .btn-blue:hover {
-    background-color: #286090; /* Color más oscuro para el hover del botón azul */
+    background-color: #286090; /* Hover para botón azul */
 }
-
-/* Aquí puedes continuar con cualquier otro estilo que necesites */
-
