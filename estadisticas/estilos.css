@@ -1,59 +1,144 @@
-
-
 .logo-img {
-    max-width: 40%; /* Ajuste del tamaño máximo */
+    max-width: 40%;
     height: auto;
-    margin-bottom: 20px;
+    display: block;
+    margin: 0 auto 20px;
 }
 
-/* Añade estilos para centrar y ajustar el tamaño */
+.control-parental-container {
+    max-width: 400px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #efefef;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.control-parental-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    padding: 10px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    height: 44px;
+}
+
+.switch input[type=checkbox] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+
+.switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.switch-label {
+    position: absolute;
+    color: #fff;
+    font-size: 20px; 
+}
+
+.switch .off {
+    right: 12px; 
+    top: 10px; 
+    display: none; 
+}
+
+
+.switch .on {
+    left: 13px; /* ajustar según sea necesario */
+    top: 10px; /* ajustar según sea necesario */
+    display: none; /* oculta por defecto */
+}
+
+
+.switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 36px;
+    width: 36px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+.switch input:checked + .slider {
+    background-color: #49be25;
+}
+
+.switch input:checked + .slider:before {
+    transform: translateX(46px);
+}
+
+.switch input:checked ~ .on {
+    display: block; 
+}
+
+.switch input:not(:checked) ~ .off {
+    display: block; 
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
 .row {
     display: flex;
     justify-content: center;
 }
 
-
-
-/* Estilo para el título */
-h1 {
-    font-size: 40px;
-    text-align: center;
-}
-
-
-/* Resetear márgenes y rellenos */
 body, h1, h2, h3, p {
     margin: 0;
     padding: 0;
 }
 
-/* Estilo para el cuerpo de la página */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
 }
 
-/* Estilo para el contenedor principal de estadísticas */
 .contenedor-estadisticas {
     max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
+    margin: 10px auto;
+    padding: 10px;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para los títulos */
-h1 {
-    font-size: 24px;
+.titulo h1 {
+    font-size: 30px;
+    font-weight: bold;
     margin-bottom: 20px;
     color: #333;
 }
 
-/* Estilo para las cajas de estadísticas */
 .col-lg-3 {
-    width: 50%;
+    width: 40%;
     padding: 0 15px;
     box-sizing: border-box;
     margin-bottom: 20px;
@@ -66,7 +151,6 @@ h1 {
     cursor: pointer;
 }
 
-/* Estilos específicos para cada caja de estadísticas */
 .bg-aqua {
     background-color: #00c0ef;
 }
@@ -83,47 +167,32 @@ h1 {
     background-color: #5cb85c;
 }
 
-/* Estilo para el contenido interno de las cajas */
 .inner {
     padding: 10px;
 }
 
-/* Estilo para los párrafos dentro de las cajas */
 p {
     font-size: 14px;
     margin-bottom: 5px;
     color: #fff;
 }
 
-/* Estilo para los números dentro de las cajas */
 .estadistica {
     font-size: 24px;
     font-weight: bold;
     color: #fff;
 }
 
-/* Estilo para los iconos dentro de las cajas */
-.icon {
-    font-size: 48px;
-    padding: 10px;
-    color: rgba(255, 255, 255, 0.8);
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-
-/* Estilo para el contenedor de los botones */
 .button-container {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
 
-/* Estilo para el espacio entre los botones */
 .button-separator {
-    width: 10px; /* Ajusta el tamaño de la separación según sea necesario */
+    width: 10px; /* Establece el ancho del separador entre botones si es necesario */
 }
 
-/* Estilo para el botón */
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -135,25 +204,23 @@ p {
     transition: background-color 0.3s ease;
 }
 
-/* Estilo para el botón verde */
 .btn-green {
-    background-color: #5cb85c; /* Color verde */
-    color: #fff; /* Texto blanco */
+    background-color: #5cb85c; /* Color verde para el botón */
+    color: #fff; /* Texto blanco para el botón */
 }
 
-/* Estilo para el botón azul */
 .btn-blue {
-    background-color: #337ab7; /* Color azul */
-    color: #fff; /* Texto blanco */
+    background-color: #337ab7; /* Color azul para el botón */
+    color: #fff; /* Texto blanco para el botón */
 }
 
-/* Cambia el color de fondo cuando se pasa el ratón sobre el botón */
 .btn:hover {
-    background-color: #4cae4c; /* Color verde más oscuro al pasar el ratón */
+    background-color: #4cae4c; /* Color más oscuro para el hover del botón verde */
 }
 
-/* Cambia el color de fondo cuando se pasa el ratón sobre el botón azul */
 .btn-blue:hover {
-    background-color: #286090; /* Color azul más oscuro al pasar el ratón */
+    background-color: #286090; /* Color más oscuro para el hover del botón azul */
 }
+
+/* Aquí puedes continuar con cualquier otro estilo que necesites */
 

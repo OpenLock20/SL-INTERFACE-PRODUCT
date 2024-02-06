@@ -9,11 +9,13 @@
 */
 
 require 'scripts/pi-hole/php/password.php';
-if (!$auth) {
-    $_SESSION['prev_url'] = $_SERVER['REQUEST_URI'];
-    header('Location: login.php');
+
+if (!isset($_SESSION['auth']) || !$_SESSION['auth']) {
+    header('Location: estadisticas/redireccion.php');
     exit;
 }
+
+
 
 require 'scripts/pi-hole/php/auth.php';
 require_once 'scripts/pi-hole/php/FTL.php';
@@ -180,7 +182,7 @@ if ($auth) {
         <a href="index.php" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini">S<strong>L</strong></span>
-	            <!-- logo for regular state and mobile devices -->
+                    <!-- logo for regular state and mobile devices -->
             <span class="logo-lg">Safe<strong>Lock</strong></span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
@@ -197,7 +199,7 @@ if ($auth) {
 
                     <li id="correo-li">
     <a href="#" onclick="abrirVentanaEmergente()">Correo: <span id="correo-actual"></span></a>
-		    </li>
+                    </li>
 
     <script>
         $(document).ready(function() {
@@ -222,15 +224,15 @@ if ($auth) {
             // Cargar el correo al cargar la página
             cargarCorreo();
 
-            // Actualizar el correo cada segundo 
+            // Actualizar el correo cada segundo
             setInterval(cargarCorreo, 1000);
         });
 
-		function abrirVentanaEmergente() {
-			// Abre la ventana emergente centrada en la pantalla
-			var ventanaEmergente = window.open('scripts/pi-hole/php/CORREO/registro_correo.php', 'RegistroCorreo', 'width=600, height=400, top=' + (screen.height/2 - 200) + ', left=' + (screen.width/2 - 300));
+                function abrirVentanaEmergente() {
+                        // Abre la ventana emergente centrada en la pantalla
+                        var ventanaEmergente = window.open('scripts/pi-hole/php/CORREO/registro_correo.php', 'RegistroCorreo', 'width=600, height=400, top=' + (screen.height/2 - 200) + ', left=' + (screen.width/2 - 300));
 
-		}
+                }
 
     </script>
 
@@ -258,9 +260,11 @@ if ($auth) {
                                 <hr>
                                 <a class="btn-link" href="http://openlocksecurity.com/" rel="noopener" target="_blank"><i class="fa fa-fw menu-icon fa-question-circle"></i> Documentation</a>
                                 <a class="btn-link" href="http://openlocksecurity.com/" rel="noopener" target="_blank"><i class="fa-fw menu-icon fa fa-regular fa-rocket"></i>Releases</a>
-                                <?php if (strlen($pwhash) > 0) {  // Show "Logout" link only when the user has the password protection enabled.?>
                                 <hr>
-                                <a class="btn-link" href="logout.php" rel="noopener"><i class="fa fa-fw menu-icon fa-sign-out-alt"></i> Log out</a>
+                                <?php if (isset($_SESSION['safelock_access']) && $_SESSION['safelock_access']) { ?>
+                                    <a class="btn-link" href="stats.php" rel="noopener"><i class="fa fa-fw menu-icon fa-sign-out-alt"></i> Back</a>
+                                <?php } else { ?>
+                                    <a class="btn-link" href="logout.php" rel="noopener"><i class="fa fa-fw menu-icon fa-sign-out-alt"></i> Back</a>
                                 <?php } ?>
                             </li>
                         </ul>
@@ -269,7 +273,22 @@ if ($auth) {
             </div>
         </nav>
     </header>
-<?php require 'scripts/pi-hole/php/sidebar.php'; ?>
+
+<?php
+
+// Incluir la barra lateral apropiada según el nivel de acceso
+if (isset($_SESSION['safelock_access']) && $_SESSION['safelock_access']) {
+    require 'scripts/pi-hole/php/sidebar2.php'; // Mostrar para acceso con safelock
+} else {
+    require 'scripts/pi-hole/php/sidebar.php'; // Mostrar para acceso normal
+}
+
+
+
+?>
+
+
+
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Main content -->

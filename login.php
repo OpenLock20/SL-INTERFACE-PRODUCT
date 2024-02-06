@@ -12,7 +12,7 @@ require 'scripts/pi-hole/php/password.php';
 
 // Go directly to index, if authenticated.
 if ($_SESSION['auth']) {
-    header('Location: index.php');
+    header('Location: estadisticas/redireccion.php');
     exit;
 }
 
@@ -67,7 +67,7 @@ require 'scripts/pi-hole/php/header.php';
                                 <i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;&nbsp;Log in
                             </button>
                             <!-- New button -->
-                            <a href="estadisticas/estadisticas.php" class="btn btn-success">
+                            <a href="estadisticas/redireccion.php" class="btn btn-success">
                                 <i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;&nbsp;Ingresar sin contraseña
                             </a>
                         </div>
