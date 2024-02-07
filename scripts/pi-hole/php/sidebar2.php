@@ -107,14 +107,6 @@
                     </ul>
                 </li>
 
-		<div class="switch-container">
-                    <h1>Control Parental</h1>
-                    <label class="switch">
-                        <input type="checkbox" id="parentalControlSwitch">
-                        <span class="slider round"></span>
-                    </label>
-                </div> 
-
             </ul>
 
         </section>
