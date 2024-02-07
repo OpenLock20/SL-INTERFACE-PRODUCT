@@ -25,6 +25,7 @@ def toggle_parental_control(enable):
     cursor = conn.cursor()
 
     parental_lists = read_list_from_file(parental_lists_file)
+    needs_update = False  # Bandera para rastrear si es necesario actualizar las listas
 
     for list_url in parental_lists:
         cursor.execute("SELECT id FROM adlist WHERE address = ?", (list_url,))
@@ -36,11 +37,16 @@ def toggle_parental_control(enable):
             # La lista no existe, entonces la inserta y la habilita
             if enable:  # Solo inserta si estamos habilitando
                 cursor.execute("INSERT INTO adlist (address, enabled) VALUES (?, 1)", (list_url,))
+                needs_update = True  # Requiere actualización ya que se agregó una nueva lista
 
     conn.commit()
     conn.close()
 
-    os.system("pihole restartdns reload-lists")
+    if needs_update:
+        os.system("pihole -g")  # Ejecuta "Update Gravity" si es necesario
+    else:
+        os.system("pihole restartdns reload-lists")  # Recarga las listas si no se necesitó actualización
+
     print("Control parental {}.".format("habilitado" if enable else "deshabilitado"))
 
 def main():
