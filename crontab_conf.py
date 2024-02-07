@@ -11,6 +11,9 @@ send_email = "/etc/cron.d/send_email"
 control_parental = "/etc/cron.d/control_parental"
 monitoring_system = "/etc/cron.d/monitoring_system"
 
+
+
+
 # Configuraciones crontab
 conf_pull = """# Se hace un pool automatico a las 3 a.m.con el archivo pull.sh
 0 3 * * * root /var/www/html/admin/pull.sh
@@ -19,7 +22,7 @@ conf_pull = """# Se hace un pool automatico a las 3 a.m.con el archivo pull.sh
 conf_dhcp = """#Aqui se programa que se haga el pool del DHCP
 * * * * * root python3 /var/www/html/admin/DHCP_activation.py ; service pihole-FTL restart
 #aqui se hace el DHCP starvation
-* * * * * root python3 /var/www/html/admin/automatizacion.p
+* * * * * root python3 /var/www/html/admin/domain_conf.py
 """
 
 with open(update_email_crontab_file, 'r') as conf:
