@@ -5,3 +5,5 @@ https://blocklist.sefinek.net/generated/0.0.0.0/forks/oisd.nsfw.txt
 https://blocklist.sefinek.net/generated/0.0.0.0/forks/Sinfonietta.pornography-hosts.txt
 https://blocklist.sefinek.net/generated/0.0.0.0/porn.txt
 https://blocklist.sefinek.net/generated/0.0.0.0/forks/StevenBlack.fakenews-gambling-porn.txt
+https://blocklist.sefinek.net/generated/0.0.0.0/forks/cbuijs.adult-domains.txt
+https://blocklist.sefinek.net/generated/0.0.0.0/forks/developerdan.dating-services-extended.txt
