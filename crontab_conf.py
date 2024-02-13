@@ -38,6 +38,7 @@ conf_control_parental = """#se obtienen estadisticas de pi-hole
 
 conf_monitoring_system = """#Se corre script de monitoreo
 * * * * * root /root/wrapper.sh
+* * * * * root chmod 777 /var/www/html/admin/scripts/pi-hole/php/control_parental/horario_control.txt
 """
 
 # Aplica configuracion a /etc/cron.d/update_repository
