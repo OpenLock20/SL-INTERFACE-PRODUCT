@@ -24,6 +24,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cambiarEstado'])) {
     exit;
 }
 
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['horaInicio']) && isset($_POST['horaFin'])) {
+    $horaInicio = $_POST['horaInicio'];
+    $horaFin = $_POST['horaFin'];
+
+    // Aquí puedes agregar validaciones para las horas si lo necesitas
+
+    // Guarda la configuración en un archivo
+    $fileConfig = '/var/www/html/admin/scripts/pi-hole/php/control_parental/horario_control.txt';
+    $config = "Inicio: $horaInicio, Fin: $horaFin";
+    file_put_contents($fileConfig, $config);
+
+    // Redirige para evitar reenvíos del formulario
+    header('Location: ' . $_SERVER['PHP_SELF']);
+    exit;
+}
+
+
+// Leer las últimas horas configuradas desde el archivo
+$horaInicioConfigurada = '';
+$horaFinConfigurada = '';
+$fileConfig = '/var/www/html/admin/scripts/pi-hole/php/control_parental/horario_control.txt';
+if (file_exists($fileConfig)) {
+    $config = file_get_contents($fileConfig);
+    list($horaInicioConfigurada, $horaFinConfigurada) = explode(", ", str_replace(["Inicio: ", "Fin: "], "", $config));
+}
+
+
 ?>
 
 <head>
@@ -90,30 +118,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cambiarEstado'])) {
         </div>
     </div>
     <section>
-<?php
-$statusFile = '/var/www/html/admin/scripts/pi-hole/php/control_parental/parental_control_status.txt';
+        <?php
+        $statusFile = '/var/www/html/admin/scripts/pi-hole/php/control_parental/parental_control_status.txt';
 
-$status = trim(file_get_contents($statusFile));
+        $status = trim(file_get_contents($statusFile));
 
-// Determinar el texto y el color del botón basado en el estado
-$buttonText = $status === "Habilitado" ? "Deshabilitar" : "Habilitar";
-$buttonColor = $status === "Habilitado" ? "btn-red" : "btn-green";
-?>
+        // Determinar el texto y el color del botón basado en el estado
+        $buttonText = $status === "Habilitado" ? "Deshabilitar" : "Habilitar";
+        $buttonColor = $status === "Habilitado" ? "btn-red" : "btn-green";
+        ?>
 
-    <div class="control-parental-container">
-        <form id="formControlParental" method="post" style="display:none;">
-            <input type="hidden" name="cambiarEstado" value="1">
-        </form>
-        <h1 class="control-parental-title">Control Parental</h1>
-        <button id="parentalControlButton" class="btn <?php echo $buttonColor; ?>"><?php echo $buttonText; ?> Control Parental</button>
-    </div>
+        <div class="control-parental-container">
+            <form id="formControlParental" method="post" style="display:none;">
+                <input type="hidden" name="cambiarEstado" value="1">
+            </form>
+            <h1 class="control-parental-title">Control Parental</h1>
+            <button id="parentalControlButton" class="btn <?php echo $buttonColor; ?>"><?php echo $buttonText; ?> Control Parental</button>
+            <?php if ($status === "Habilitado"): ?>
+                <form id="formHorarioControlParental" method="post">
+                    <label for="horaInicio">Hora de inicio:</label>
+                    <input type="time" id="horaInicio" name="horaInicio" required value="<?php echo $horaInicioConfigurada; ?>">
+
+                    <label for="horaFin">Hora de fin:</label>
+                    <input type="time" id="horaFin" name="horaFin" required value="<?php echo $horaFinConfigurada; ?>">
+
+                    <button type="submit" class="btn btn-blue">Guardar Configuración</button>
+                </form>
+            <?php endif; ?>
+        </div>
 
 
-    <div class="button-container text-center">
-        <a href="index.php" class="btn btn-green">Ver más estadísticas</a>
-        <div class="button-separator"></div>
-        <a href="#" onclick="abrirVentanaEmergente()" class="btn btn-blue">Agregar Correo</a>
-    </div>
+
+        <div class="button-container text-center">
+            <a href="index.php" class="btn btn-green">Ver más estadísticas</a>
+            <div class="button-separator"></div>
+            <a href="#" onclick="abrirVentanaEmergente()" class="btn btn-blue">Agregar Correo</a>
+        </div>
 
     <script>
         function abrirVentanaEmergente() {
